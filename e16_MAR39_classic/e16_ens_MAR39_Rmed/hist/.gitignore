@@ -1,2 +1,10 @@
 # Netcdf forcing files
 *.nc
+
+# keep symlinks to forcing files
+!restart_relax.nc
+!smb_reference_usrf.nc
+!smb_ref.nc
+!retreatmasks.nc
+!smb_forcing.nc
+

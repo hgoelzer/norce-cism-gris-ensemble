@@ -1,2 +1,7 @@
 # Netcdf forcing files
 *.nc
+
+# keep symlinks to forcing files
+!restart_hist.nc
+!smb_reference_usrf.nc
+!smb_ref.nc
