@@ -7,7 +7,7 @@
 - ocean sens [AOSENS]: Rmed | Rhigh | Rlow
 
 # Experiment template
-greenland_16km_hist_rmed_proj_TEMPL
+exp_TEMPL
 
 
 # meta script for setup
