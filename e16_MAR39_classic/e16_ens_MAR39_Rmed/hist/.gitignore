@@ -1,7 +1,12 @@
-# Netcdf forcing files
+# Ignore netcdf output files
 *.nc
 
-# keep symlinks to forcing files
+# Ignore log files 
+cism.config.log
+results
+slurm-*.out
+
+# Keep symlinks to forcing files
 !restart_relax.nc
 !smb_reference_usrf.nc
 !smb_ref.nc
