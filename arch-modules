@@ -1,4 +1,4 @@
-# Run this script by typing: source saga-gnu-modules
+# Run this script by typing: source arch-modules
 
 module purge
 module load StdEnv
