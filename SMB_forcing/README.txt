@@ -1,4 +1,5 @@
-# Collect forcing fields
+# Collect SMB forcing fields
+# These are often independent of the specific spinup/experiment. That's why they could be collected here.
 
 ares=04
 
