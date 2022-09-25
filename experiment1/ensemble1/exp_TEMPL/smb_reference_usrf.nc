@@ -1,1 +1,1 @@
-../../Forcing/smb_reference_usrf_16000m.nc
+../../Forcing/smb_reference_usrf_04000m.nc

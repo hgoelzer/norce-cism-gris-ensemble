@@ -1,7 +1,7 @@
 # Projection ensembles based on a specific spinup
 
 # Run spinup and relax 
-spinup
+init
 
 # Get forcing and retreat masks (to be calculated elsewhere)
 Forcing/

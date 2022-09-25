@@ -2,9 +2,9 @@
 #SBATCH --job-name=cism_hist
 # KeyCLIM: nn9252k; INES: nn9560k; GREASE: nn8006k
 #SBATCH --account=nn8085k
-#SBATCH --time=00:10:00
-#SBATCH --mem-per-cpu=3G
-#SBATCH --ntasks=4
+#SBATCH --nodes=4
+#SBATCH --ntasks-per-node=128
+#SBATCH --time=00:10:00 
 
 ## Setting variables and prepare runtime environment:
 ##----------------------------------------------------
@@ -14,7 +14,14 @@ set -o nounset # Treat unset variables as errors
 
 . arch-modules
 
-# use srun on saga
+# copy files
+cp cism.config cism_driver restart_in.nc smb_anomaly.nc smb_gradz.nc smb_reference_usrf.nc smb_ref.nc artm_anomaly.nc artm_gradz.nc retreatmasks.nc $SCRATCH
+cd $SCRATCH
+
+# Make sure output is copied back after job finishes
+savefile restart.nc output.nc output_g0.nc output_tavg.nc scalars.nc cism.config.log results
+
+# use srun 
 time srun ./cism_driver cism.config
 
 # Finish the script

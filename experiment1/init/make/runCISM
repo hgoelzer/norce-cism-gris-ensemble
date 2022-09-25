@@ -13,7 +13,7 @@
 set -o errexit # Make bash exit on any error
 set -o nounset # Treat unset variables as errors
 
-. saga-gnu-modules
+. arch-modules
 
 # use srun on saga
 time srun ./cism_driver cism.config

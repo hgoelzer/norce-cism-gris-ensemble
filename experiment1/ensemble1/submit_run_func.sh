@@ -21,7 +21,7 @@ fi
 
 # Mapping of RCMS and GCMS
 declare -A RCMnames
-RCMnames=( ["MARv3.9"]="01" ["MARv3.12"]="02" )
+RCMnames=( ["MARv3.9"]="01" ["MARv3.12"]="02" ["RACMO2.3p2"]="03" )
 declare -A GCMnames
 GCMnames=( ["MIROC5"]="01" ["NorESM1"]="02" ["HadGEM2-ES"]="03" ["IPSL-CM5-MR"]="04" ["CSIRO-Mk3.6"]="05" ["ACCESS1.3"]="06" ["CNRM-CM6"]="07" ["UKESM1-CM6"]="08" ["CESM2"]="09" ["CNRM-ESM2"]="10" ["MPI-ESM1-2-HR"]="11" )
 declare -A SCENnames
