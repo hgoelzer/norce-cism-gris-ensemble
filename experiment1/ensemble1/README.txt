@@ -25,3 +25,13 @@ check_run_func.sh
 # submit ensemble
 meta_clean_runs.sh
 clean_run_func.sh
+
+
+# setup ctrl_proj
+cp -R greenland_08km_v04_m01_r01_f26_o50 greenland_08km_v04_ctrl_proj
+cd greenland_08km_v04_ctrl_proj
+rm -f smb_anomaly.nc smb_gradz.nc artm_anomaly.nc artm_gradz.nc
+ln -s ../../Forcing/smb_anomaly_proj_ctrlproj_08000.nc smb_anomaly.nc
+ln -s ../../Forcing/smb_gradz_proj_ctrlproj_08000.nc smb_gradz.nc 
+ln -s ../../Forcing/artm_gradz_proj_ctrlproj_08000.nc artm_gradz.nc
+ln -s ../../Forcing/artm_anomaly_proj_ctrlproj_08000.nc artm_anomaly.nc

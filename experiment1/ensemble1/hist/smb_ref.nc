@@ -1,1 +1,1 @@
-../../Forcing/smb_ref_04000m.nc
+../../Forcing/smb_ref.nc
