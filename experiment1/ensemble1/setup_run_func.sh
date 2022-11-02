@@ -2,9 +2,9 @@
 # Set up a generic run
 
 ### Fixed settings
-ares=08
+ares=16
 avernum=04
-amodel=NORCE_CISM08_MAR39
+amodel=NORCE_CISM16_MAR39
 aexp=greenland
 atempl=exp_TEMPL
 
@@ -23,7 +23,7 @@ fi
 declare -A RCMnames
 RCMnames=( ["MARv3.9"]="01" ["MARv3.12"]="02" ["RACMO2.3p2"]="03" )
 declare -A GCMnames
-GCMnames=( ["MIROC5"]="01" ["NorESM1"]="02" ["HadGEM2-ES"]="03" ["IPSL-CM5-MR"]="04" ["CSIRO-Mk3.6"]="05" ["ACCESS1.3"]="06" ["CNRM-CM6"]="07" ["UKESM1-0-LL-Robin"]="08" ["CESM2-Leo"]="09" ["CNRM-ESM2"]="10" ["MPI-ESM1-2-HR"]="11" ["CESM2-CM6"]="12" )
+GCMnames=( ["MIROC5"]="01" ["NorESM1"]="02" ["HadGEM2-ES"]="03" ["IPSL-CM5-MR"]="04" ["CSIRO-Mk3.6"]="05" ["ACCESS1.3"]="06" ["CNRM-CM6"]="07" ["UKESM1-0-LL-Robin"]="08" ["CESM2-Leo"]="09" ["CNRM-ESM2"]="10" ["MPI-ESM1-2-HR"]="11" ["CESM2-CMIP6"]="12" )
 declare -A SCENnames
 SCENnames=( ["ssp585"]="85" ["ssp245"]="45" ["ssp126"]="26" ["rcp85"]="85" ["rcp26"]="26" )
 declare -A OSENSnames
@@ -94,4 +94,8 @@ ln -s ../../Forcing/smb_anomaly_proj_${ARCM}_${AGCM}-${ASCEN}_${ares}000.nc ./sm
 ln -s ../../Forcing/smb_gradz_proj_${ARCM}_${AGCM}-${ASCEN}_${ares}000.nc ./smb_gradz.nc
 ln -s ../../Forcing/artm_anomaly_proj_${ARCM}_${AGCM}-${ASCEN}_${ares}000.nc ./artm_anomaly.nc
 ln -s ../../Forcing/artm_gradz_proj_${ARCM}_${AGCM}-${ASCEN}_${ares}000.nc ./artm_gradz.nc
-
+# extensions to 2300
+ln -s ../../Forcing/smb_anomaly_proj_ext10_${ARCM}_${AGCM}-${ASCEN}_${ares}000.nc ./smb_anomaly_ext.nc
+ln -s ../../Forcing/smb_gradz_proj_ext10_${ARCM}_${AGCM}-${ASCEN}_${ares}000.nc ./smb_gradz_ext.nc
+ln -s ../../Forcing/artm_anomaly_proj_ext10_${ARCM}_${AGCM}-${ASCEN}_${ares}000.nc ./artm_anomaly_ext.nc
+ln -s ../../Forcing/artm_gradz_proj_ext10_${ARCM}_${AGCM}-${ASCEN}_${ares}000.nc ./artm_gradz_ext.nc
