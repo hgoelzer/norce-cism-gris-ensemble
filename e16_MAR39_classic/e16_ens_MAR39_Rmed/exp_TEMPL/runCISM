@@ -12,9 +12,16 @@
 set -o errexit # Make bash exit on any error
 set -o nounset # Treat unset variables as errors
 
-. saga-gnu-modules
+. arch-modules
 
-# use srun on saga
+# copy files
+cp cism.config cism_driver restart_in.nc smb_anomaly.nc smb_gradz.nc smb_reference_usrf.nc smb_ref.nc artm_anomaly.nc artm_gradz.nc retreatmasks.nc $SCRATCH
+cd $SCRATCH
+
+# Make sure output is copied back after job finishes
+savefile restart.nc output.nc output_g0.nc output_tavg.nc scalars.nc cism.config.log results
+
+# use srun 
 time srun ./cism_driver cism.config
 
 # Finish the script

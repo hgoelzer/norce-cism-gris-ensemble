@@ -3,8 +3,8 @@
 
 ### Fixed settings
 ares=16
-avernum=03
-amodel=NORCE_CISM16_MAR39
+avernum=04
+amodel=NORCE_CISM16_MAR312
 aexp=greenland
 atempl=exp_TEMPL
 
@@ -21,9 +21,9 @@ fi
 
 # Mapping of RCMS and GCMS
 declare -A RCMnames
-RCMnames=( ["MARv3.9"]="01" ["MARv3.12"]="02" )
+RCMnames=( ["MARv3.9"]="01" ["MARv3.12"]="02" ["RACMO2.3p2"]="03" )
 declare -A GCMnames
-GCMnames=( ["MIROC5"]="01" ["NorESM1"]="02" ["HadGEM2-ES"]="03" ["IPSL-CM5-MR"]="04" ["CSIRO-Mk3.6"]="05" ["ACCESS1.3"]="06" ["CNRM-CM6"]="07" ["UKESM1-CM6"]="08" ["CESM2"]="09" ["CNRM-ESM2"]="10" ["MPI-ESM1-2-HR"]="11" )
+GCMnames=( ["MIROC5"]="01" ["NorESM1"]="02" ["HadGEM2-ES"]="03" ["IPSL-CM5-MR"]="04" ["CSIRO-Mk3.6"]="05" ["ACCESS1.3"]="06" ["CNRM-CM6"]="07" ["UKESM1-0-LL-Robin"]="08" ["CESM2-Leo"]="09" ["CNRM-ESM2"]="10" ["MPI-ESM1-2-HR"]="11" ["IPSL-CM6A-LR"]="12" ["NorESM2"]="13" ["CESM2-CMIP6"]="14" ["UKESM1-0-LL-CMIP6"]="15")
 declare -A SCENnames
 SCENnames=( ["ssp585"]="85" ["ssp245"]="45" ["ssp126"]="26" ["rcp85"]="85" ["rcp26"]="26" )
 declare -A OSENSnames
@@ -89,6 +89,9 @@ perl -p -i -e 's/EXPNAME/$ENV{EXPNAME}/g' cism.config
 perl -p -i -e 's/EXPNAME/$ENV{EXPNAME}/g' runCISM
 
 # link forcing files
-ln -s ../../Forcing/retreatmasks_hist_med_v1_${ARCM}_${AGCM}-${ASCEN}-R${AOSENS}_${amodel}.nc ./retreatmasks.nc
-ln -s ../../Forcing/smb_forcing_histproj_${ARCM}_${AGCM}-${ASCEN}_16000.nc ./smb_forcing.nc
+ln -s ../../Forcing/retreatmasks_hist_${AOSENS}_v1_${ARCM}_${AGCM}-${ASCEN}-R${AOSENS}_${amodel}.nc ./retreatmasks.nc
+ln -s ../../Forcing/smb_anomaly_proj_${ARCM}_${AGCM}-${ASCEN}_${ares}000.nc ./smb_anomaly.nc
+ln -s ../../Forcing/smb_gradz_proj_${ARCM}_${AGCM}-${ASCEN}_${ares}000.nc ./smb_gradz.nc
+ln -s ../../Forcing/artm_anomaly_proj_${ARCM}_${AGCM}-${ASCEN}_${ares}000.nc ./artm_anomaly.nc
+ln -s ../../Forcing/artm_gradz_proj_${ARCM}_${AGCM}-${ASCEN}_${ares}000.nc ./artm_gradz.nc
 
